@@ -1,0 +1,10 @@
+service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service-mediatek
+    class main
+    user system
+    group system readproc
+    
+
+#add by wenguangyu for perso sensor config    
+on init
+   chmod 0664 /dev/tn_sensors_state
+   chown system system /dev/tn_sensors_state
